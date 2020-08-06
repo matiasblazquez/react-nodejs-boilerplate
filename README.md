@@ -90,7 +90,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const outputDirectory = "dist";
 
 module.exports = {
-  entry: ["babel-polyfill", "./src/client/index.js"],
+  entry: ["babel-polyfill", "./src/client/index.jsx"],
   output: {
     path: path.join(__dirname, outputDirectory),
     filename: "bundle.js",
@@ -131,7 +131,7 @@ module.exports = {
 };
 ```
 
-1.  **entry:** entry: ./src/client/index.js is where the application starts executing and webpack starts bundling.
+1.  **entry:** entry: ./src/client/index.jsx is where the application starts executing and webpack starts bundling.
     Note: babel-polyfill is added to support async/await. Read more [here](https://babeljs.io/docs/en/babel-polyfill#usage-in-node-browserify-webpack).
 2.  **output path and filename:** the target directory and the filename for the bundled output
 3.  **module loaders:** Module loaders are transformations that are applied on the source code of a module. We pass all the js file through [babel-loader](https://github.com/babel/babel-loader) to transform JSX to Javascript. CSS files are passed through [css-loaders](https://github.com/webpack-contrib/css-loader) and [style-loaders](https://github.com/webpack-contrib/style-loader) to load and bundle CSS files. Fonts and images are loaded through url-loader.
@@ -174,7 +174,7 @@ Here, we tell nodemon to watch the files in the directory src/server where out s
 
 Express is a web application framework for Node.js. It is used to build our backend API's.
 
-src/server/index.js is the entry point to the server application. Below is the src/server/index.js file
+src/server/index.jsx is the entry point to the server application. Below is the src/server/index.jsx file
 
 ```javascript
 const express = require("express");
@@ -197,7 +197,7 @@ This starts a server and listens on port 8080 for connections. The app responds 
 
 ```javascript
 "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-"server": "nodemon src/server/index.js",
+"server": "nodemon src/server/index.jsx",
 "dev": "concurrently \"npm run server\" \"npm run client\""
 ```
 
