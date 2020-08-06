@@ -61,15 +61,16 @@ Babel requires plugins to do the transformation. Presets are the set of plugins 
 
 ```javascript
 {
-  "extends": ["airbnb"],
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "node": true
   },
+  "plugins": ["jsdoc"],
   "rules": {
     "no-console": "off",
     "comma-dangle": "off",
-    "react/jsx-filename-extension": "off"
+    "extends": ["plugin:jsdoc/recommended"]
   }
 }
 ```
