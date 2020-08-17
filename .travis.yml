@@ -10,4 +10,4 @@ deploy:
   provider: script
   script: bash scripts/deploy.sh https://github.com/capistrano/capistrano.git capistrano
   on:
-    branch: master
+    branch: /^([rR]elease|[hH]ot[fF]ix)\/DEVOP-\d+/
