@@ -1,8 +1,5 @@
 #/bin/bash
 
-# this script clones a repository, including all its remote branches
-# Author: julianromera
-
 GIT=`which git`
 
 if [ "x$1" = "x" -o "x$2" = "x" ];then
@@ -16,16 +13,12 @@ fi
 
 function clone {
 
-  $GIT clone -q $1 $2
+  $GIT submodule add $1 $2
   res=$?
   
   cd $2
   
   $GIT pull --all
-  
-  for remote in `$GIT branch -r | grep -v \>`; do
-     $GIT branch --track ${remote#origin/} $remote;
-  done
 }
 
 echo "cloning repository into ... $2"
