@@ -10,4 +10,5 @@ deploy:
   provider: script
   script: bash scripts/deploy.sh https://github.com/capistrano/capistrano.git capistrano
   on:
-    branch: release/DEVOP-123
+    all_branches: true
+    condition: branch =~ ^([rR]elease|[hH]ot[fF]ix)\/DEVOP-\d+
