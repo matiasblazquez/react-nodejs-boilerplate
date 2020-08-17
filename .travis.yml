@@ -5,4 +5,9 @@ node_js:
 
 script:
   - npm run build
-  - git clone https://github.com/capistrano/capistrano.git && cd capistrano
+
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh https://github.com/capistrano/capistrano.git capistrano
+  on:
+    branch: develop
