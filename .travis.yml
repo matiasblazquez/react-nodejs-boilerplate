@@ -5,6 +5,8 @@ node_js:
 
 script:
   - npm run build
+notifications:
+  slack: globant:zGKrzzDV03A8EG1qhEUgeokv
 
 deploy:
   provider: script
