@@ -11,3 +11,6 @@ deploy:
   script: bash scripts/deploy.sh https://github.com/capistrano/capistrano.git capistrano
   on:
     all_branches: true
+after_failure:
+  - if [ -f tests/tests.log ]; then cat tests/tests.log; fi
+  - echo == End of test log ==
