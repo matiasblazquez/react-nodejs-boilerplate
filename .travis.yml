@@ -11,4 +11,4 @@ deploy:
   script: bash scripts/deploy.sh https://github.com/capistrano/capistrano.git capistrano
   on:
     all_branches: true
-    condition: $TRAVIS_BRANCH =~ ^([rR]elease|[hH]ot[fF]ix)\/DEVOP-\d+
+    condition: $TRAVIS_BRANCH =~ /^([rR]elease|[hH]ot[fF]ix)\/DEVOP-\d+$/
