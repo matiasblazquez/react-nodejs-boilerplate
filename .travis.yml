@@ -10,4 +10,5 @@ deploy:
   provider: script
   script: bash scripts/deploy.sh https://github.com/capistrano/capistrano.git capistrano
   on:
-    branch: /^([rR]elease|[hH]ot[fF]ix)\/DEVOP-\d+/
+    all_branches: true
+    condition: $TRAVIS_BRANCH =~ ^([rR]elease|[hH]ot[fF]ix)\/DEVOP-\d+
