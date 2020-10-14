@@ -22,10 +22,11 @@ function clone {
   cd $2
   
   $GIT pull --all --ff-only
+  $GIT checkout master
   
-  for remote in `$GIT branch -r | grep -v \>`; do
-     $GIT branch --track ${remote#origin/} $remote;
-  done
+  # for remote in `$GIT branch -r | grep -v \>`; do
+  #    $GIT branch --track ${remote#origin/} $remote;
+  # done
 }
 
 echo "cloning repository into ... $2"
