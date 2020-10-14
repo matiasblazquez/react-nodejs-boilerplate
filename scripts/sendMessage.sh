@@ -1,8 +1,16 @@
 #/bin/bash
 
-function message {
+GIT=`which git`
 
-curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+if [ "x$GIT" = "x" ];then
+  echo "No git command found. install it"
+fi
+
+function message {
+  
+  $GIT log master..DEVOP-222 --pretty=format:"%h%x09%an%x09%ad%x09%s"  --merges
+
 }
 
-message
+echo "listing changes ..."
+clone
