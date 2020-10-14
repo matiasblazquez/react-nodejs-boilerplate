@@ -1,6 +1,6 @@
 #/bin/bash
 
-if [ "$TRAVIS_BRANCH" == "DEVOP-222" ]; then
+if [ $TRAVIS_BRANCH == "DEVOP-222" ]; then
     GIT=`which git`
 
     if [ "x$1" = "x" -o "x$2" = "x" ];then

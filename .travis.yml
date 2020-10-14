@@ -12,4 +12,4 @@ deploy:
   on:
     all_branches: true
 after_success:
-  - "curl -X POST -H 'Content-type: application/json' --data \"{'text':'Un mensaje mas completo'}\" https://hooks.slack.com/services/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"
+  - ./scripts/sendMessage.sh
