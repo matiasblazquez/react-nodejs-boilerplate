@@ -12,4 +12,9 @@ deploy:
   on:
     all_branches: true
 after_success:
-- bash scripts/sendMessage.sh
+  if ([ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ]) && 
+      [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    echo "This will deploy!"
+  else
+curl -X POST -H 'Content-type: application/json' --data "{'text':'Un mensaje mas completo'}" https://hooks.slack.com/services/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
+  fi
