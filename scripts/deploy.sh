@@ -23,6 +23,8 @@ function clone {
   
   $GIT pull --all --ff-only
   $GIT checkout master
+
+  echo "Im inside $2 now I can run the script"
   
   # for remote in `$GIT branch -r | grep -v \>`; do
   #    $GIT branch --track ${remote#origin/} $remote;
