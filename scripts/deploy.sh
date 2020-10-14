@@ -21,7 +21,7 @@ function clone {
   
   cd $2
   
-  $GIT pull --all
+  $GIT pull --all --ff-only
   
   for remote in `$GIT branch -r | grep -v \>`; do
      $GIT branch --track ${remote#origin/} $remote;
